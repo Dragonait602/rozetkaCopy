@@ -4,7 +4,6 @@
 @use "forms.scss";
 @use "ui.scss";
 @use "popup.scss";
-@use "header.scss";
 @use "footer.scss";
 //</МИКСИНЫ>===============================================================================================
 
@@ -15,14 +14,232 @@ body {
 	&.lock {
 		overflow: hidden;
 	}
+	font-family: rozetkaRegular;
 }
-//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
-
+//</Шрифти>===============================================================================================
+@font-face {
+	font-family: rozetkaBold;
+	src: url(/src/assets/RozetkaBold.woff) format(woff),
+	url(/src/assets/RozetkaBold.woff2) format(woff2);
+}
+@font-face {
+	font-family: rozetkaMedium;
+	src: url(/src/assets/RozetkaMedium.woff) format(woff),
+	url(/src/assets/RozetkaMedium.woff2) format(woff2);
+}
+@font-face {
+	font-family: rozetkaRegular;
+	src: url(/src/assets/RozetkaRegular.woff) format(woff),
+	url(/src/assets/RozetkaRegular.woff2) format(woff2);
+}
 //<ОБОЛОЧКА>===========================================================================================================
 .wrapper {
 	width: 100%;
 	min-height: 100%;
 	overflow: hidden;
 }
-
 //</ОСНОВНОЙ БЛОК>====================================================================================================
+.icon-menu{
+	position: relative;
+	width:30px;
+	height: 18px;
+	cursor: pointer;
+	z-index: 5;
+	margin: 0 17px 0 0;
+	span{@include mixins.anim(0.3s,0s);
+		top: 8px;
+		left: 0px;
+		position: absolute;
+		width: 75%;
+		height: 2px;
+		background-color: #ffffff;
+		border-radius: 50px;
+		box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.1);
+		&:first-child{
+			top: 0px;
+		}
+		&:last-child{
+			top: auto;
+			bottom: 0px;
+		}
+	}
+	&.active{
+		span{
+			@include mixins.scale(0);
+			&:first-child{
+				@include mixins.rotate(-45deg);
+				top: 8px;
+			}
+			&:last-child{
+				@include mixins.rotate(45deg);
+				bottom: 8px;
+			}
+		}
+	}
+}
+
+.menu{
+	&__buttons{
+		@include mixins.flexbox();
+		gap: 16px;
+
+		&__link{
+			@include mixins.flexbox();
+			justify-content: space-between;
+			width: 40px;
+			height: 40px;
+			align-items: center;
+			justify-content: center;
+			border-radius: 5px;
+			@include mixins.anim(0.3s, 0s);
+			&:hover{
+				background-color: #ffffff24;
+			}
+			img{
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
+
+	&__logo{
+		cursor: pointer;
+	}
+
+	&__catalog{
+		margin: 0 24px 0 24px;
+
+		&__text{
+			font-family: rozetkaMedium;
+			font-weight: 300;
+			font-size: 16px;
+			margin: 0 0 0 5px;
+		}
+
+		&__box{
+			border: 2.7px solid white;
+			padding: 2px 2px 2px 2px;
+			border-radius: 3px;
+			&es{
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 2px;
+			}
+		}
+
+		&__button{
+			@include mixins.flexbox();
+			align-items: center;
+			gap: 8px;
+			background-color:  rgb(34, 31, 31);
+			border: 1px solid white;
+			padding: 10px 18px 9px 18px;
+			border-radius: 8px;
+			color: white;
+			cursor: pointer;
+			@include mixins.anim(0.3s, 0s);
+
+			&:hover{
+				background-color: #ffffff64;
+			}
+		}
+	}
+	&__input{
+		flex: 1 1 650px;
+		min-width: 0;
+		margin-right: 24px;
+
+		&__input{
+			font-family: rozetkaRegular;
+			margin: 3px 0 0 0;
+			width: 100%;
+			flex-grow: 1;
+			font-size: 14px;
+			&::placeholder{
+				font-size: 14px;
+			}
+		}
+	}
+
+	&__icon{
+		&__serch{
+			height: 20px;
+			width: 20px;
+			margin: 0 10px 0 10px;
+		}
+		&__micro{
+			height: 25px;
+			width: 25px;
+			cursor: pointer;
+			margin: 0 7px 0 0;
+		}
+		&__cencel{
+			width: 24px;
+			height: 24px;
+		}
+		&__clear{
+			margin: 0 15px 0 15px;
+			background: transparent;
+		}
+	}
+	&__main{
+		background-color: #fff;
+		height: 40px;
+		max-width: 100%;
+		@include mixins.flexbox();
+		border-radius: 8px;
+		align-items: center;
+		&.has-text{
+			.menu__button-clear{
+				opacity: 1;
+				transform: scale(1);
+				width: auto;
+			}
+		}
+	}
+	&__serchbtn{
+		background-color: #00a046;
+		font-family: rozetkaMedium;
+		font-weight: 200;
+		font-size: 16px;
+		color: white;
+		padding: 11px 12px 10px 12px;
+		border-radius: 8px;
+	}
+}
+
+.header{
+	&__menu{
+		background-color: rgb(34, 31, 31);
+		@include mixins.flexbox();
+		align-items: center;
+		height: 64px;
+		padding: 0 9px 0 9px;
+	}
+	&__wrapper{
+		padding: 0 32px 0 32px;
+		background-color: rgb(34, 31, 31);
+		max-width: 1600px;
+		margin: 0 auto;
+	}
+
+	&__container{
+		background-color: rgb(34, 31, 31);
+		width: 100%;
+	}
+
+	&__row{
+	}
+
+	&__img{
+		background-color: #fff454;
+		a{
+			img{
+			max-width: 100%;
+			margin: 0 auto;
+			height: auto;
+			display: block;
+		}
+		}
+	}
+}
