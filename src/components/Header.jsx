@@ -20,7 +20,7 @@ function Header() {
                 <div className="container">
                     <div className="header__row">
                         <div className="header__img">
-                            <a href="sale"><img src="saleBaner.png" alt="" /></a>
+                            <a href="sale"><img src="header/saleBaner.png" alt="" /></a>
                         </div>
                         <div className="header__container">
                             <div className="header__wrapper">
@@ -31,7 +31,7 @@ function Header() {
                                         <span></span>
                                     </div>
                                     <div className="menu__logo">
-                                        <img src="/rozetkaLogo.svg" alt="" />
+                                        <img src="header/rozetkaLogo.svg" alt="" />
                                     </div>
                                     <div className="menu__catalog">
                                         <button className="menu__catalog__button">
@@ -48,21 +48,22 @@ function Header() {
                                     </div>
                                     <div className="menu__input">
                                         <div className="menu__main">
-                                            <img className="menu__icon__serch" src="serchIco.svg" alt="Serch" />
+                                            <img className="menu__icon__serch" src="header/serchIco.svg" alt="Serch" />
                                             <input className="menu__input__input" value={inputValue} onChange={(e)=> setInputValue(e.target.value)} type="text" name="" id="" placeholder="Я шукаю..." />
                                             {hasText && 
                                             <button className="menu__icon__clear" onClick={handleClearInput}>
-                                                <img className="menu__icon__cencel" src="cencel.svg" alt="" />
+                                                <img className="menu__icon__cencel" src="header/cencel.svg" alt="" />
                                             </button>}
-                                            <img className="menu__icon__micro" src="microIco.svg" alt="" />
+                                            <img className="menu__icon__micro" src="header/microIco.svg" alt="" />
                                             <button className="menu__serchbtn">Знайти</button>
                                         </div>
                                     </div>
                                     <div className="menu__buttons">
-                                        <a href="" className="menu__buttons__link"><img src="/recomendation.svg" alt="" /></a>
-                                        <a href="" className="menu__buttons__link"><img src="/nontification.svg" alt="" /></a>
-                                        <a href="" className="menu__buttons__link"><img src="/compare.svg" alt="" /></a>
-                                        <a href="" className="menu__buttons__link"><img src="/buyList.svg" alt="" /></a>
+                                        {/*ДЛЯ АВТОРИЗОВАНОГО КОРИСТУВАЧА <a href="" className="menu__buttons__link"><img src="header/recomendation.svg" alt="" /></a>
+                                        <a href="" className="menu__buttons__link"><img src="header/nontification.svg" alt="" /></a> */}
+                                        <a href="" className="menu__buttons__link"><img src="header/user.svg" alt="" /></a>
+                                        <a href="" className="menu__buttons__link"><img src="header/compare.svg" alt="" /></a>
+                                        <a href="" className="menu__buttons__link"><img src="header/buyList.svg" alt="" /></a>
                                     </div>
                                     <nav className="menu__body">
                                         <ul className="menu__list">
