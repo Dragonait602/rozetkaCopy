@@ -303,6 +303,46 @@ function Slidebar(){
                         </ul>
                     </div>
                 </div>
+                <div className="slidebar__section">
+                    <div className="info slidebar__section-mini">
+                        <h3 className="slidebar__h3-first">Інформація про компанію</h3>
+                        <ul>
+                            <li className="slidebar__bottom__link"><a href="">Про нас</a></li>
+                            <li className="slidebar__bottom__link"><a href="">Умови використання сайту</a></li>
+                            <li className="slidebar__bottom__link"><a href="">Вакансії</a></li>
+                            <li className="slidebar__bottom__link"><a href="">Контакти</a></li>
+                            <li className="slidebar__bottom__link"><a href="">Всі категорії</a></li>
+                        </ul>
+                    </div>
+                    <div className="helper slidebar__section-mini">
+                        <h3 className="slidebar__h3">Допомога</h3>
+                        <ul>
+                            <li className="slidebar__bottom__link"><a href="">Доставка та оплата</a></li>
+                            <li className="slidebar__bottom__link"><a href="">Кредит</a></li>
+                            <li className="slidebar__bottom__link"><a href="">Гарантія</a></li>
+                            <li className="slidebar__bottom__link"><a href="">Повернення товару</a></li>
+                            <li className="slidebar__bottom__link"><a href="">Сервісні центри</a></li>
+                        </ul>
+                    </div>
+                    <div className="service slidebar__section-mini">
+                        <h3 className="slidebar__h3">Сервіси</h3>
+                        <ul>
+                            <li className="slidebar__bottom__link"><a href="">Бонусний рахунок</a></li>
+                            <li className="slidebar__bottom__link"><a href="">Подарункові сертифікати</a></li>
+                            <li className="slidebar__bottom__link"><a href="">Rozetka Обмін</a></li>
+                            <li className="slidebar__bottom__link"><a href="">Корпоративним клієнтам</a></li>
+                        </ul>
+                    </div>
+                    <div className="partner slidebar__section-mini">
+                        <h3 className="slidebar__h3">Партнерам</h3>
+                        <ul>
+                            <li className="slidebar__bottom__link"><a href="">Продавати на Розетці</a></li>
+                            <li className="slidebar__bottom__link"><a href="">Співпраця з нами</a></li>
+                            <li className="slidebar__bottom__link"><a href="">Франчайзинг</a></li>
+                            <li className="slidebar__bottom__link"><a href="">Оренда приміщень</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </aside>
     )

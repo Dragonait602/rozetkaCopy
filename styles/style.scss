@@ -228,9 +228,6 @@ body {
 		width: 100%;
 	}
 
-	&__row{
-	}
-
 	&__img{
 		background-color: #fff454;
 		a{
@@ -254,6 +251,10 @@ body {
 	&__section{
 		border-top: 1px solid #e9e9e9;
 		padding: 16px 24px;
+		&-mini{
+			padding: 8px 0 16px 0;
+			border-bottom: 1px solid #e9e9e9;
+		}
 	}
 
 	&__title{
@@ -273,6 +274,31 @@ body {
 	&__list{
 		li{
 			padding: 3px 0;
+		}
+	}
+		&__bottom__link{
+			padding: 2px 4px;
+			line-height: 32px;
+			&:hover{
+			text-decoration: underline;
+		}
+		a{
+			color: black;
+			padding: 0px 4px;
+		}
+	}
+	&__h3{
+		color: #797878;
+		font-family: rozetkaBold;
+		font-size: 14px;
+		padding: 0px 8px;
+		margin: 12px 0;
+		&-first{
+			margin: 0 0 12px 0;
+			color: #797878;
+			font-family: rozetkaBold;
+			font-size: 14px;
+			padding: 0px 8px
 		}
 	}
 
@@ -308,15 +334,6 @@ body {
 
 .catalog{
 	padding: 24px 0px 12px 0px;
-	&__link{
-		div{}
-
-		svg{}
-
-		&:hover{
-			div{}
-		}
-	}
 
 	&__list{
 		li{
