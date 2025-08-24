@@ -243,6 +243,17 @@ body {
 
 .mainPage{
 	@include mixins.flexbox();
+	padding: 0 24px;
+
+	&__slidebar{
+		flex-shrink: 0;
+		width: 300px;
+	}
+
+	&__content{
+		flex-grow: 1;
+		min-width: 0;
+	}
 }
 
 .slidebar{
@@ -268,7 +279,7 @@ body {
 	}
 
 	&__wrapper{
-		padding: 0 32px;
+		padding: 24px 16px 12px 0px;
 	}
 
 	&__list{
@@ -333,7 +344,7 @@ body {
 }
 
 .catalog{
-	padding: 24px 0px 12px 0px;
+	padding: 0px 0px 0px 0px;
 
 	&__list{
 		li{
@@ -455,4 +466,78 @@ body {
 			width: 21px;
 		}
 	}
+}
+
+.slider-container{
+	position: relative;
+	width: 100%;
+	border-radius: 12px;
+	overflow: hidden;
+
+	img{
+		display: block;
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+	}
+}
+
+.mainContent{
+	padding: 16px 0 0 40px;
+}
+
+.action{
+	a{
+		color: #3e77aa;
+		font-size: 15px;
+		padding: 8px 4px;
+	}
+}
+
+.custom-swiper-button-prev,
+.custom-swiper-button-next {
+	position: absolute;
+	top: 50%; // Вертикально по центру
+	transform: translateY(-50%);
+	z-index: 10; // Перекривають слайдер
+
+	width: 44px;  // Розмір круга
+	height: 44px;
+	background-color: #f2f2f2; // Напівпрозорий білий
+	border-radius: 50%; // Робимо круг
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // Легка тінь
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+
+  // Стилі для SVG-іконки всередині
+	svg {
+		width: 40px;
+		height: 40px;
+		stroke: #797878; // Колір стрілки
+		stroke-width: 1.5px;
+	}
+
+  // Ефект при наведенні
+	&:hover {
+		background-color: #eaeaea; // Стає непрозорим
+	}
+}
+
+// Розташування кожної кнопки окремо
+.custom-swiper-button-prev {
+  left: 20px; // Відступ зліва
+}
+
+.custom-swiper-button-next {
+  right: 20px; // Відступ справа
+}
+
+// Swiper автоматично додає цей клас, коли стрілка неактивна (якщо loop: false)
+.swiper-button-disabled {
+	opacity: 0.3;
+	cursor: not-allowed;
 }

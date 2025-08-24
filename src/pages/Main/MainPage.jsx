@@ -4,8 +4,12 @@ import MainContent from './MainContent'
 function MainPage(){
     return(
         <div className="mainPage">
-            <Slidebar />
-            <MainContent />
+            <div className="mainPage__slidebar">
+                <Slidebar />
+            </div>
+            <div className="mainPage__content">
+                <MainContent />
+            </div>
         </div>
     )
 }

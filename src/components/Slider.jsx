@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 import Page1 from "../assets/mainSlider/1.webp"
 import Page2 from "../assets/mainSlider/2.webp"
@@ -26,14 +26,22 @@ function Slider() {
     return(
         <div className="slider-container">
             <Swiper
-                modules={[Navigation, Pagination]}
+                modules={[Navigation, Pagination, Autoplay]}
                 slidesPerView={1}
                 spaceBetween={30}
                 loop={true}
                 pagination={{
                     clickable: true,
                 }}
-                navigation={true}
+                navigation={{
+                    prevEl: '.custom-swiper-button-prev',
+                    nextEl: '.custom-swiper-button-next'
+                }}
+                speed={500}
+                autoplay={{
+                    delay:4000,
+                    disableOnInteraction: false,
+                }}
             >
                 {sliderImage.map((image, index) =>(
                     <SwiperSlide key={index}>
@@ -43,6 +51,16 @@ function Slider() {
                 </SwiperSlide>
                 ))}
             </Swiper>
+            <div className="custom-swiper-button-prev">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </div>
+            <div className="custom-swiper-button-next">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </div>
         </div>
     )
 }
